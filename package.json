@@ -1,0 +1,24 @@
+{
+  "name": "jquery-backbone-vue",
+  "version": "1.0.0",
+  "description": "从 jQuery 到 Backbone，再到 Vue",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/meathill-lecture/jquery-backbone-vue.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/meathill-lecture/jquery-backbone-vue/issues"
+  },
+  "homepage": "https://github.com/meathill-lecture/jquery-backbone-vue#readme",
+  "devDependencies": {
+    "font-awesome": "^4.7.0",
+    "reveal.js": "^3.4.1"
+  }
+}
