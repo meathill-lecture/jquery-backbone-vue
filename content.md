@@ -8,7 +8,7 @@
 
 --------
 
-![Meathill](http://qiniu.meathill.com/wp-content/uploads/2016/07/20160607_005422423_iOS-825x510.jpg)
+![Meathill](http://qiniu.meathill.com/wp-content/uploads/2016/07/20160607_005422423_iOS-825x510.jpg | height=400)
 
 全栈工程师，编程爱好者
 
@@ -45,7 +45,7 @@
 
 ## Backbone
 
-[地址](http://backbonejs.org/)
+[官网](http://backbonejs.org/)
 
 --------
 
@@ -66,7 +66,7 @@
 
 ### Model 和 View 交互
 
-![Models and Views](http://backbonejs.org/docs/images/intro-model-view.svg)
+![Models and Views](//backbonejs.org/docs/images/intro-model-view.svg | height=160)
 
 1. 用户操作视图
 2. 视图将用户操作的结果，以数据方式传给模型
@@ -78,7 +78,7 @@
 
 ### Collection 和 Model 的关系
 
-![Collection](http://backbonejs.org/docs/images/intro-collections.svg)
+![Collection](//backbonejs.org/docs/images/intro-collections.svg | height=320)
  
 1. Model 是一个对象，比如“一名员工”
 2. Collection 是相同对象组成的集合，比如“全部员工”
@@ -88,7 +88,7 @@
 
 ### 视图同步
 
-![View Rendering](http://backbonejs.org/docs/images/intro-views.svg)
+![View Rendering](//backbonejs.org/docs/images/intro-views.svg | height=240)
 
 1. 用户操作 A 视图
 2. A 试图讲数据发送给模型
@@ -99,7 +99,7 @@
 
 ### 路由
 
-![Routing with URLs](http://backbonejs.org/docs/images/intro-routing.svg)
+![Routing with URLs](//backbonejs.org/docs/images/intro-routing.svg | height=240)
 
 路由会侦听 URL 变化，并广播事件。
 

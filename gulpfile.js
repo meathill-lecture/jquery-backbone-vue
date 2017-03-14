@@ -15,6 +15,27 @@ const CDN = require('./cdn.json');
 const DOC = 'docs/';
 const PATH_REG = /\.\/node_modules\/([\w\.\-]+)\//g;
 
+let renderer = new marked.Renderer();
+let separator = ' | ';
+renderer.image = function (href, title, text) {
+  let attrs = '';
+  title = title || '';
+  text = text || '';
+  if (href.indexOf(separator) !== -1) {
+    attrs = href.split(separator);
+    href = attrs[0];
+    attrs = attrs[1].split(' ').filter(item => {
+      return item;
+    }).map(pairs => {
+      let arr = pairs.split('=');
+      return `${arr[0]}="${arr[1]}"`;
+    }).join(' ');
+  }
+
+  return `<img src="${href}" title="${title}" alt="${text}" ${attrs}>`;
+};
+
+
 gulp.task('clear', () => {
   return del(`${DOC}*`);
 });
@@ -32,7 +53,7 @@ gulp.task('html', () => {
   pages = pages.map( page => {
     let pages = page.split('========');
     pages = pages.map( page => {
-      return '<section>' + marked(page) + '</section>';
+      return '<section>' + marked(page, {renderer: renderer}) + '</section>';
     });
     if (pages.length > 1) {
       return '<section>' + pages.join('') + '</section>';
