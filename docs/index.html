@@ -13,34 +13,72 @@
   <div class="slides">
     <section><h1 id="jquery-backbone-vue">jQuery Backbone, Vue</h1>
 <p><a href="//weibo.com/meathill/">@meathill</a></p>
-</section><section><section><h3 id="-">关于作者</h3>
+</section><section><h3 id="-">关于作者</h3>
 </section><section><p><img src="http://qiniu.meathill.com/wp-content/uploads/2016/07/20160607_005422423_iOS-825x510.jpg" alt="Meathill"></p>
 <p>全栈工程师，编程爱好者</p>
 <p><a href="http://blog.meathill.com/">博客</a></p>
-</section></section><section><h2 id="jquery">jQuery</h2>
+</section><section><h2 id="jquery">jQuery</h2>
 </section><section><h3 id="jquery-">jQuery 的优势</h3>
 <ol>
-<li>提供统一的 API</li>
+<li>统一 DOM 和 Ajax API</li>
 <li>创造很多高效用法</li>
-<li>封装了错误处理</li>
+<li>提共事件代理机制</li>
+<li>语法容错性更好</li>
 </ol>
 </section><section><h3 id="jquery-">jQuery 的问题</h3>
+<p>只关注 DOM 操作，对上规模的产品很无力。</p>
 <ol>
-<li>只关注 DOM</li>
-<li>没有抽象</li>
+<li>应该提交哪些数据给服务器？</li>
+<li>有数据，怎么还原出操作结果？</li>
+<li>修改了 A 组件，B 组件要同步体现变化，怎么处理？</li>
 </ol>
 </section><section><h2 id="-jquery-">使用 jQuery 开发</h2>
 </section><section><h2 id="backbone">Backbone</h2>
-</section><section><h3 id="backbone-">Backbone 的优势</h3>
+<p><a href="http://backbonejs.org/">地址</a></p>
+</section><section><h3 id="backbone-">Backbone 是什么？</h3>
 <ol>
-<li>MVP 框架</li>
-<li>将业务抽象成数据对象</li>
-<li>视图响应事件更新</li>
+<li>MVP 框架<ol>
+<li>View 视图 渲染，相应用户操作</li>
+<li>Collection/Model 数据模型 组织数据，和服务器交互</li>
+<li>Router 路由 在大型单页应用中提供全局定位</li>
 </ol>
+</li>
+<li>将业务抽象成数据操作</li>
+</ol>
+</section><section><h3 id="backbone-">Backbone 是这么做的</h3>
+</section><section><h3 id="model-view-">Model 和 View 交互</h3>
+<p><img src="http://backbonejs.org/docs/images/intro-model-view.svg" alt="Models and Views"></p>
+<ol>
+<li>用户操作视图</li>
+<li>视图将用户操作的结果，以数据方式传给模型</li>
+<li>模型向服务器同步数据</li>
+<li>模型广播 <code>change</code> 事件</li>
+<li>视图侦听到 <code>change</code> 时间，刷新</li>
+</ol>
+</section><section><h3 id="collection-model-">Collection 和 Model 的关系</h3>
+<p><img src="http://backbonejs.org/docs/images/intro-collections.svg" alt="Collection"></p>
+<ol>
+<li>Model 是一个对象，比如“一名员工”</li>
+<li>Collection 是相同对象组成的集合，比如“全部员工”</li>
+<li>Collection 会代理 Model 的事件</li>
+</ol>
+</section><section><h3 id="-">视图同步</h3>
+<p><img src="http://backbonejs.org/docs/images/intro-views.svg" alt="View Rendering"></p>
+<ol>
+<li>用户操作 A 视图</li>
+<li>A 试图讲数据发送给模型</li>
+<li>模型修改，同步，并广播事件</li>
+<li>所有侦听该模型的视图均得到更新</li>
+</ol>
+</section><section><h3 id="-">路由</h3>
+<p><img src="http://backbonejs.org/docs/images/intro-routing.svg" alt="Routing with URLs"></p>
+<p>路由会侦听 URL 变化，并广播事件。</p>
+<p>此项今日不讨论。</p>
+</section><section><h2 id="-backbone-">使用 Backbone 开发</h2>
 </section><section><h3 id="backbone-">Backbone 的问题</h3>
 <p>没有数据双向绑定</p>
-</section><section><h2 id="-backbone-">使用 Backbone 开发</h2>
 </section><section><h2 id="vue">Vue</h2>
+<p><a href="//cn.vuejs.org/">官网</a></p>
 </section><section><h3 id="vue-">Vue 的优势</h3>
 <ol>
 <li>MVVM 框架</li>
@@ -49,8 +87,8 @@
 </section><section><h2 id="-vue-">使用 Vue 开发</h2>
 </section><section><h2 id="-">总结</h2>
 <ol>
-<li>语言有其发展规律，规模越大，越需要抽象</li>
-<li>框架可以帮我们节省大量代码</li>
+<li>语言在发展，学习是必须的</li>
+<li>项目的体量决定了不同技术选型之间的效率差别</li>
 <li>Vue 是个好东西，推荐给大家</li>
 </ol>
 </section><section><h2 id="q-a">Q&amp;A</h2>

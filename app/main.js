@@ -3,8 +3,6 @@
  */
 
 Reveal.initialize({
-  width: '90%',
-  height: '90%',
   dependencies: [
     {
       src: './node_modules/reveal.js/plugin/markdown/marked.js',
@@ -27,3 +25,11 @@ Reveal.initialize({
     }
   ]
 });
+
+if (location.search.match(/print/gi)) {
+  var link = document.createElement( 'link' );
+  link.rel = 'stylesheet';
+  link.type = 'text/css';
+  link.href = './node_modules/reveal.js/css/print/pdf.css';
+  document.getElementsByTagName( 'head' )[0].appendChild( link );
+}
