@@ -4,7 +4,8 @@
   "description": "从 jQuery 到 Backbone，再到 Vue",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch:stylus": "stylus watch styl/screen.styl -o css/"
   },
   "repository": {
     "type": "git",
@@ -27,5 +28,11 @@
     "marked": "^0.3.6",
     "reveal.js": "^3.4.1",
     "run-sequence": "^1.2.2"
+  },
+  "dependencies": {
+    "backbone": "^1.3.3",
+    "bootstrap": "^4.0.0-alpha.6",
+    "font-awesome": "^4.7.0",
+    "handlebars": "^4.0.6"
   }
 }

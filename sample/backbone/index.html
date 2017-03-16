@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>jQuery Todo sample</title>
+  <title>Backbone Todo sample</title>
 
   <link rel="stylesheet" href="../../node_modules/bootstrap/dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="../../node_modules/font-awesome/css/font-awesome.min.css">
@@ -11,7 +11,7 @@
 <body>
 <div class="container">
   <div id="app">
-    <h1>TODO - jQuery</h1>
+    <h1>TODO - Backbone</h1>
     <hr>
     <form class="form">
       <label for="todo-input">增加待办事项：</label>
@@ -25,13 +25,15 @@
       </div>
     </form>
     <ul class="list-group">
-      <li id="template" class="list-group-item form-group">
-        <label class="custom-control custom-checkbox">
-          <input type="checkbox" class="custom-control-input">
-          <span class="custom-control-indicator"></span>
-          <span class="custom-control-description">Sample</span>
-        </label>
-      </li>
+      <script type="text/x-handlebars-template">
+        <li id="{{cid}}" class="list-group-item form-group {{#if status}}done{{/if}}">
+          <label class="custom-control custom-checkbox">
+            <input type="checkbox" class="custom-control-input" value="{{cid}}" {{#if status}}checked{{/if}}>
+            <span class="custom-control-indicator"></span>
+            <span class="custom-control-description">{{label}}</span>
+          </label>
+        </li>
+      </script>
     </ul>
     <hr>
     <p class="counter"></p>
@@ -39,6 +41,9 @@
 </div>
 
 <script src="../../node_modules/jquery/dist/jquery.min.js"></script>
+<script src="../../node_modules/handlebars/dist/handlebars.min.js"></script>
+<script src="../../node_modules/underscore/underscore-min.js"></script>
+<script src="../../node_modules/backbone/backbone-min.js"></script>
 <script src="main.js"></script>
 </body>
 </html>

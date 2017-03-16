@@ -3,3 +3,5 @@
 
 # repo
 node_modules
+/*.pdf
+/css
