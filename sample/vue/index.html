@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Backbone Todo sample</title>
+
+  <link rel="stylesheet" href="../../node_modules/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../../node_modules/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="../../css/screen.css">
+</head>
+<body>
+<div class="container">
+  <div id="app">
+    <h1>TODO - Backbone</h1>
+    <hr>
+    <form class="form" @submit.prevent="onSubmit">
+      <label for="todo-input">增加待办事项：</label>
+      <div class="input-group">
+        <input type="text" id="todo-input" class="form-control" name="todo">
+        <div class="input-group-btn">
+          <button class="btn btn-primary">
+            <i class="fa fa-plus"></i>
+          </button>
+        </div>
+      </div>
+    </form>
+    <ul class="list-group">
+      <template v-for="(item, index) in todos">
+        <li class="list-group-item form-group" :class="item.status ? 'done' : ''">
+          <label class="custom-control custom-checkbox">
+            <input type="checkbox" class="custom-control-input" :checked="item.status" @change="onChange(index, $event)">
+            <span class="custom-control-indicator"></span>
+            <span class="custom-control-description">{{item.label}}</span>
+          </label>
+        </li>
+      </template>
+    </ul>
+    <hr>
+    <p class="counter"></p>
+  </div>
+</div>
+
+<script src="../../node_modules/vue/dist/vue.min.js"></script>
+<script src="main.js"></script>
+</body>
+</html>
