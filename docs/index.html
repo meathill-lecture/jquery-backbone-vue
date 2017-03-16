@@ -25,6 +25,7 @@
 <li>提共事件代理机制</li>
 <li>语法容错性更好</li>
 </ol>
+</section><section><h2 id="-jquery-">使用 jQuery 开发</h2>
 </section><section><h3 id="jquery-">jQuery 的问题</h3>
 <p>只关注 DOM 操作，对上规模的产品很无力。</p>
 <ol>
@@ -32,7 +33,6 @@
 <li>有数据，怎么还原出操作结果？</li>
 <li>修改了 A 组件，B 组件要同步体现变化，怎么处理？</li>
 </ol>
-</section><section><h2 id="-jquery-">使用 jQuery 开发</h2>
 </section><section><h2 id="backbone">Backbone</h2>
 <p><a href="http://backbonejs.org/">官网</a></p>
 </section><section><h3 id="backbone-">Backbone 是什么？</h3>
@@ -44,6 +44,7 @@
 </ol>
 </li>
 <li>将业务抽象成数据操作</li>
+<li>视图响应数据变化</li>
 </ol>
 </section><section><h3 id="backbone-">Backbone 是这么做的</h3>
 </section><section><h3 id="model-view-">Model 和 View 交互</h3>
@@ -70,19 +71,26 @@
 <li>模型修改，同步，并广播事件</li>
 <li>所有侦听该模型的视图均得到更新</li>
 </ol>
-</section><section><h3 id="-">路由</h3>
-<p><img src="http://backbonejs.org/docs/images/intro-routing.svg" title="" alt="Routing with URLs" height="240"></p>
-<p>路由会侦听 URL 变化，并广播事件。</p>
-<p>此项今日不讨论。</p>
+</section><section><h2 id="backbone-">Backbone 的优势</h2>
+<ol>
+<li>各组件独立，耦合很低</li>
+<li>开发维护成本得以大大降低</li>
+<li>侵入性很低，可以很容易配合其它类库及框架</li>
+</ol>
 </section><section><h2 id="-backbone-">使用 Backbone 开发</h2>
 </section><section><h3 id="backbone-">Backbone 的问题</h3>
-<p>没有数据双向绑定</p>
+<ul>
+<li>没有数据双向绑定</li>
+<li>只能全量更新</li>
+<li>需要花费大量时间绑定事件</li>
+</ul>
 </section><section><h2 id="vue">Vue</h2>
 <p><a href="//cn.vuejs.org/">官网</a></p>
 </section><section><h3 id="vue-">Vue 的优势</h3>
 <ol>
-<li>MVVM 框架</li>
-<li>只需要操作数据，视图自动更新</li>
+<li>MVVM 框架，数据双向绑定</li>
+<li>丰富的模板语言，易读好写</li>
+<li>组件系统开发大规模应用更有优势</li>
 </ol>
 </section><section><h2 id="-vue-">使用 Vue 开发</h2>
 </section><section><h2 id="-">总结</h2>
