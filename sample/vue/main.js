@@ -11,6 +11,16 @@ let app = new Vue({
   data: {
     todos: store
   },
+  computed: {
+    done() {
+      return this.todos.filter( todo => {
+        return !todo.status;
+      }).length;
+    },
+    total() {
+      return this.todos.length;
+    }
+  },
   methods: {
     store() {
       let json = JSON.stringify(this.todos);

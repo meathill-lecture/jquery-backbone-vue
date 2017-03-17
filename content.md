@@ -1,4 +1,4 @@
-# jQuery Backbone, Vue
+# jQuery, Backbone, Vue
 
 [@meathill](//weibo.com/meathill/)
 
@@ -24,7 +24,7 @@
 
 1. 统一 DOM 和 Ajax API
 2. 创造很多高效用法
-3. 提共事件代理机制
+3. 提供事件代理机制
 4. 语法容错性更好
 
 --------
