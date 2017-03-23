@@ -17,6 +17,16 @@
 --------
 
 ## jQuery
+## Backbone
+## Vue
+
+--------
+
+前端技术发展迅速，也伴随很多纷争。了解一门技术的起源、目的、结果，有助于我们更好的理解和应用它，有助于我们更好的规划学习路径。
+
+--------
+
+## jQuery
 
 --------
 
@@ -79,7 +89,7 @@
 ### Collection 和 Model 的关系
 
 ![Collection](http://backbonejs.org/docs/images/intro-collections.svg | height=320)
- 
+
 1. Model 是一个对象，比如“一名员工”
 2. Collection 是相同对象组成的集合，比如“全部员工”
 3. Collection 会代理 Model 的事件
