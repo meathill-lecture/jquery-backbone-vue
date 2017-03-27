@@ -29,7 +29,7 @@ let List = Backbone.View.extend({
   events: {
     'change input': 'input_onChange'
   },
-  initialize: function () {
+  initialize () {
     this.template = Handlebars.compile(this.$('script').remove().html());
     this.collection.on('add', this.collection_onAdd, this);
     this.collection.on('change', this.collection_onChange, this);
@@ -37,14 +37,14 @@ let List = Backbone.View.extend({
       this.collection.trigger('add', model);
     });
   },
-  collection_onAdd: function (model) {
+  collection_onAdd(model) {
     let item = this.template(model.toJSON());
     this.$el.append(item);
   },
-  collection_onChange: function (model) {
+  collection_onChange(model) {
     this.$('#' + model.cid).replaceWith(this.template(model.toJSON()));
   },
-  input_onChange: function (event) {
+  input_onChange(event) {
     let target = $(event.currentTarget);
     this.collection.get(target.val()).set('status', target.prop('checked'));
   }
@@ -53,19 +53,23 @@ let Input = Backbone.View.extend({
   events: {
     'submit': 'onSubmit'
   },
-  onSubmit: function (event) {
+  onSubmit(event) {
     event.preventDefault();
+    let todo = this.$('input').val();
+    if (!todo) {
+      return;
+    }
     this.collection.add({
       status: false,
-      label: this.$('input').val()
+      label: todo
     });
     this.$('input').val('');
   }
 });
 let Counter = Backbone.View.extend({
-  initialize: function () {
-    this.collection.on('change', this.collection_onChange, this);
-    this.collection.on('add', this.collection_onAdd, this);
+  initialize() {
+    this.collection.on('change', this.render, this);
+    this.collection.on('add', this.render, this);
     this.render();
   },
   render() {
@@ -73,12 +77,6 @@ let Counter = Backbone.View.extend({
       return !model.get('status');
     }).length;
     this.$el.html(`${done} / ${this.collection.length}`);
-  },
-  collection_onAdd: function () {
-    this.render();
-  },
-  collection_onChange: function () {
-    this.render();
   }
 });
 
