@@ -4,20 +4,23 @@
   "description": "从 jQuery 到 Backbone，再到 Vue",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "watch:stylus": "stylus watch styl/screen.styl -o css/"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/meathill-lecture/jquery-backbone-vue.git"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "keywords": [
+    "jquery",
+    "backbone",
+    "vue"
+  ],
+  "author": "Meathill <meathill@gmail.com>",
+  "license": "MIT + CC4.0",
   "bugs": {
     "url": "https://github.com/meathill-lecture/jquery-backbone-vue/issues"
   },
-  "homepage": "https://github.com/meathill-lecture/jquery-backbone-vue#readme",
+  "homepage": "https://meathill-lecture.github.io/jquery-backbone-vue/",
   "devDependencies": {
     "del": "^2.2.2",
     "font-awesome": "^4.7.0",
